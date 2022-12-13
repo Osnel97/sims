@@ -1,7 +1,6 @@
 @extends('dashboard')
 @section('content')
  <form method="Post" action="{{route('student.update',$student->id)}}">
-      @method('PATCH')
       @csrf
       <div class="form-group">
         <label for="ﬁrst_name">First Name:</label><br/><br/>
@@ -23,5 +22,5 @@
         <input type="text" class="form-control" name="academic_year" value={{$student->academic_year}}><br/><br/>
   </div>
   
-  <br/><button type="submit" class="btn-btn">Update</button></form>
+  <br/><button type="submit" class="btn btn-primary">Update</button></form>
 @endsection

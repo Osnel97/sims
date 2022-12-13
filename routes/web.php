@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController; 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -31,9 +32,13 @@ Route::get('create_student', function(){
    })->name('student.create');
 Route::post('store_student', [StudentController::class, 'store'])->name('student.store'); 
 Route::post('edit_student/{id}', [StudentController::class, 'edit'])->name('student.edit');
-Route::post('update_student', [StudentController::class, 'update'])->name('student.update');
+Route::post('update_student/{id}', [StudentController::class, 'update'])->name('student.update');
 Route::post('delete_student/{id}', [StudentController::class, 'destroy'])->name('student.delete');
 Route::get('students', [StudentController::class, 'index'])->name('students');
+
+Route::get('payments', [PaymentController::class, 'index'])->name('payments');
+Route::post('edit_payments/{id}', [StudentController::class, 'edit'])->name('payment.edit');
+Route::post('delete_payments/{id}', [StudentController::class, 'destroy'])->name('payment.delete');
 
 
 

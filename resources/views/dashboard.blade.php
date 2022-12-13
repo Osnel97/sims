@@ -19,8 +19,9 @@ aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           @else 
           <li class="nav-item"> <a class="nav-link" href="{{ route('registration') }}">Register User</a> </li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('student.create') }}">Create Student</a> </li>   
-           <li class="nav-item"> <a class="nav-link" href="{{ route('students') }}">Students</a> </li> 
-           <li class="nav-item"> <a class="nav-link" href="{{ route('signout') }}">Logout</ a> </li>                   
+           <li class="nav-item"> <a class="nav-link" href="{{ route('students') }}">Students</a> </li>
+           <li class="nav-item"> <a class="nav-link" href="{{ route('payments') }}">Payments</a> </li>  
+           <li class="nav-item"> <a class="nav-link" href="{{ route('signout') }}">Logout</ a> </li>                    
  @endguest
  </ul> 
 </div>

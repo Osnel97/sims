@@ -47,7 +47,7 @@ class StudentController extends Controller
      $student->email=$request->get('email');
      $student->academic_year=$request->get('academic_year');
      $student->save();
-     return redirect()->intended('dashboard');
+     return redirect()->intended('students');
     }
     
 
@@ -70,7 +70,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $student= Student::ﬁnd($id);
+        $student= Student::find($id);
         return view('edit_student',compact('student'));
     }
 
@@ -85,13 +85,14 @@ class StudentController extends Controller
     {
         $request->validate(['ﬁrst_name'=>'required','last_name'=>'required',
         'gender'=>'required','email'=>'required','academic_year'=>'required']);
-        $student=Student::ﬁnd($id);
+        $student=Student::find($id);
         $student->ﬁrst_name=$request->get('ﬁrst_name'); 
         $student->last_name=$request->get('last_name');
         $student->gender=$request->get('gender');
         $student->email=$request->get('email');
         $student->academic_year=$request->get('academic_year');
         $student->save();
+        return redirect()->intended('students');
     }
 
     /**
@@ -102,7 +103,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student=Student::ﬁnd($id);
+        $student=Student::find($id);
         $student->delete();
+        return redirect()->intended('students');
     }
 }
