@@ -30,9 +30,9 @@ Route::get('create_student', function(){
     return view('create_student');
    })->name('student.create');
 Route::post('store_student', [StudentController::class, 'store'])->name('student.store'); 
-Route::post('edit_student', [StudentController::class, 'edit'])->name('student.edit');
+Route::post('edit_student/{id}', [StudentController::class, 'edit'])->name('student.edit');
 Route::post('update_student', [StudentController::class, 'update'])->name('student.update');
-Route::post('delete_student', [StudentController::class, 'destroy'])->name('student.delete');
+Route::post('delete_student/{id}', [StudentController::class, 'destroy'])->name('student.delete');
 Route::get('students', [StudentController::class, 'index'])->name('students');
 
 
