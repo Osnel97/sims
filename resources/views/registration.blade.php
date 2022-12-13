@@ -10,7 +10,7 @@
 <form action="{{ route('Registration.process') }}" method="POST">
 @csrf
  <div class="form-group mb-3"> 
-     <input type="text" placeholder="Name" id="name" cl ass="form-control" name="name" required autofocus>
+     <input type="text" placeholder="Name" id="name" class="form-control" name="name" required autofocus>
       @if ($errors->has('name')) 
       <span class="text-danger">{{ $errors->first('name' ) }}</span>
        @endif 
@@ -27,12 +27,8 @@
           <span class="text-danger">{{ $errors->first('passw ord') }}</span>
            @endif 
         </div> 
-        <div class="form-group mb-3"> <div class="checkbox">
-<label><input type="checkbox" name="remember">Remember Me</label>
-</div>
- </div>
   <div class="d-grid mx-auto">
- <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+ <button type="submit" class="btn btn-dark btn-block">Regster</button>
 </div>
  </form>
  </div>
