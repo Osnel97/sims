@@ -24,6 +24,8 @@ class AuthController extends Controller
    ]);
     $credentials = $request->only('email', 'password');
     if (Auth::attempt($credentials)) {
+       $user=Auth::User();
+       Session::put('user', $user);
         return redirect()->intended('dashboard')
         ->withSuccess('Signed in');
         }
@@ -31,8 +33,9 @@ class AuthController extends Controller
     }
 
     public function registration()
-    {
-        return view('registration');
+    {    
+        $user=Session::get('user');
+        return view('registration',compact('user'));
     }
 
     public function Registration_process(Request $request)
@@ -59,7 +62,8 @@ class AuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('dashboard');
+            $user=Session::get('user');
+            return view('dashboard', compact('user'));
         }
         return redirect("login")->withSuccess('You are not allowed to access');
     }

@@ -25,10 +25,13 @@
  </div>
 
  <div class="form-group">
-        <label for="email">Academic year:</label><br/><br/>
-    <input type="text" class="form-control" name="academic_year"/><br/><br/>
- </div>
- 
+        <label for="academic_year">Academic year:</label><br/><br/>
+         <select name="academic_year" id="academic_year" value="" class="form-select">       
+          <option value="" disabled selected>Select Academic year:</option>
+          <option value="2020-2021">2020-2021</option>
+          <option value="2021-2022">2021-2022</option>
+         </select><br/>
+</div>
  <br/>
  <button type="submit"class="btn   btn-primary">Add</button>
  </form>

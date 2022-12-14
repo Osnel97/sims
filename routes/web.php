@@ -28,7 +28,8 @@ Route::post('Registration_process', [AuthController::class, 'Registration_proces
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 Route::get('create_student', function(){
-    return view('create_student');
+    $user=Session::get('user');
+    return view('create_student',compact('user'));
    })->name('student.create');
 Route::post('store_student', [StudentController::class, 'store'])->name('student.store'); 
 Route::post('edit_student/{id}', [StudentController::class, 'edit'])->name('student.edit');
@@ -36,9 +37,12 @@ Route::post('update_student/{id}', [StudentController::class, 'update'])->name('
 Route::post('delete_student/{id}', [StudentController::class, 'destroy'])->name('student.delete');
 Route::get('students', [StudentController::class, 'index'])->name('students');
 
+
+Route::get('create_payments', [PaymentController::class, 'create'])->name('payment.create');
 Route::get('payments', [PaymentController::class, 'index'])->name('payments');
-Route::post('edit_payments/{id}', [StudentController::class, 'edit'])->name('payment.edit');
-Route::post('delete_payments/{id}', [StudentController::class, 'destroy'])->name('payment.delete');
+Route::post('store_payment', [PaymentController::class, 'store'])->name('payment.store'); 
+Route::post('edit_payments/{id}', [PaymentController::class, 'edit'])->name('payment.edit');
+Route::post('delete_payments/{id}', [PaymentController::class, 'destroy'])->name('payment.delete');
 
 
 

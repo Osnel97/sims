@@ -1,5 +1,7 @@
 @extends('dashboard')
-@section('content') 
+@section('content')
+
+<a  style="float:right" href="{{ route('payment.create') }}"><button class="btn btn-primary" >Create Payment</button></a></br></br>
   <table border="1px" class="table table-bordered">
     <thead>
         <tr>
@@ -31,7 +33,7 @@
 <td > 
     <form action="{{ route('payment.edit', $payment->id) }}" method="post">
     @csrf
-    <button class="btn btn-primary" type="submit">Edit</button>
+    <button disabled class="btn btn-primary" type="submit">Edit</button>
 </form>
 </td>
 

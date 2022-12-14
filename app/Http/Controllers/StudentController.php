@@ -15,9 +15,10 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {  
+         $user=Session::get('user');
         $students=Student::all();
-        return view('students',compact('students'));
+        return view('students',compact('students','user'));
     }
 
     /**
@@ -69,9 +70,10 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $user=Session::get('user');
         $student= Student::find($id);
-        return view('edit_student',compact('student'));
+        return view('edit_student',compact('student','user'));
     }
 
     /**
