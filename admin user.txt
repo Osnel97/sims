@@ -1,2 +1,2 @@
-username:jdoe@gmail.com
-pass:123456
+username: jdoe@gmail.com
+pass: 123456
