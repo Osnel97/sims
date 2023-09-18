@@ -9,7 +9,7 @@
          <select name="payment_student" id="payment_student" value="" class="form-select">      
           <option value="" disabled selected>Select Student</option>
           @foreach($students as $student)  
-          <option value="{{ $student->email}}">{{$student->ﬁrst_name,last_name}}</option>
+          <option value="{{ $student->email}}">{{$student->ﬁrst_name,  $student->ﬁrst_name}}</option>
           @endforeach 
          </select><br/><br/>
 </div>
